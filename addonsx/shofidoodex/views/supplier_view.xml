@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="doodex_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">doodex.supplier</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="telp"/>
+                <field name="cp"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="doodex_supplier_view_form" model="ir.ui.view">
+        <field name="name">Form Supplier</field>
+        <field name="model">doodex.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="telp"/>
+                        <field name="cp"/>
+                    </group>
+                </sheet>
+                <sheet>
+                    <group name="barang" string="Daftar Barang">
+                        <field name="barang_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- doodex.supplier action window -->
+    <record id="doodex_supplier_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="shofidoodex_supplier_menu_act" 
+    name="Daftar Supplier" 
+    parent="shofidoodex_supplier_menu_categ" 
+    action="doodex_supplier_action" 
+    sequence="5"/>
+
+</odoo>

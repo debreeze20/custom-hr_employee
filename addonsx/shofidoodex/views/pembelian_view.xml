@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="doodex_pembelian_view_tree" model="ir.ui.view">
+        <field name="name">Menu Pembelian</field>
+        <field name="model">doodex.pembelian</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="barang_id"/>
+                <field name="supplier_id"/>
+                <field name="qty_beli"/>
+                <field name="bayar"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="doodex_pembelian_view_form" model="ir.ui.view">
+        <field name="name">Form Pembelian</field>
+        <field name="model">doodex.pembelian</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="barang_id"/>
+                        <field name="supplier_id"/>
+                        <field name="qty_beli"/>
+                        <field name="bayar"/>                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- doodex_pembelian action window -->
+    <record id="doodex_pembelian_action" model="ir.actions.act_window">
+        <field name="name">Pembelian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.pembelian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="shofidoodex_pembelian_menu"
+        name="Pembelian"
+        action="doodex_pembelian_action"
+        parent="shofidoodex_penjualan_menu_categ"
+        sequence="10"/>
+
+</odoo>

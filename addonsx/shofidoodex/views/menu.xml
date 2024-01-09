@@ -18,11 +18,22 @@
     <menuitem id="shofidoodex_pelanggan_menu_categ"
         name="Pelanggan"
         parent="shofidoodex_menu_root"
-        sequence="10"/> 
+        sequence="15"/> 
 
     <menuitem id="shofidoodex_penjualan_menu_categ"
         name="Penjualan"
         parent="shofidoodex_menu_root"
-        sequence="10"/> 
+        sequence="20"/> 
+
+    <menuitem id="shofidoodex_supplier_menu_categ"
+        name="Supplier"
+        parent="shofidoodex_menu_root"
+        sequence="25"/>
+
+    <menuitem id="shofidoodex_pembelian_menu_categ"
+        name="Pembelian"
+        parent="shofidoodex_menu_root"
+        sequence="30"/> 
+
 
 </odoo>
