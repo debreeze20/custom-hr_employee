@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_barang_doodex,access.barang.doodex,model_barang_doodex,,1,1,1,1
+access_doodex_manusia,access.doodex.manusia,model_doodex_manusia,,1,1,1,1
+access_doodex_pelanggan,access.doodex.pelanggan,model_doodex_pelanggan,,1,1,1,1
+access_doodex_jenisbarang,access.doodex.jenisbarang,model_doodex_jenisbarang,,1,1,1,1
+access_doodex_karyawan,access.doodex.karyawan,model_doodex_karyawan,,1,1,1,1
+access_doodex_penjualan,access.doodex.penjualan,model_doodex_penjualan,,1,1,1,1
+access_doodex_detailpenjualan,access.doodex.detailpenjualan,model_doodex_detailpenjualan,,1,1,1,1

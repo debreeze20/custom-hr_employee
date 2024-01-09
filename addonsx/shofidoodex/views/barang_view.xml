@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="barang_doodex_view_tree">
+        <field name="name">barang.doodex.view.tree</field>
+        <field name="model">barang.doodex</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nama_barang"/>
+                <field name="description"/>
+                <field name="jenis"/>
+                        <field name="stok"/> 
+                        <field name="harga"/> 
+            </tree>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <!-- barang.shofidoodex form view -->
+    <record id="barang_doodex_view_form" model="ir.ui.view">
+        <field name="name">barang.doodex.view.form</field>
+        <field name="model">barang.doodex</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="nama_barang"/>
+                        <field name="description"/> 
+                        <field name="jenis"/> 
+                        <field name="stok"/> 
+                        <field name="harga"/> 
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!-- model.name action window -->
+    <record id="doodex_barang_action" model="ir.actions.act_window">
+        <field name="name">Barang Doodex</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">barang.doodex</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="shofidoodex_barang_menu_act" 
+        name="Daftar Barang" 
+        parent="shofidoodex_barang_menu_categ" 
+        action="doodex_barang_action" 
+        sequence="5"/>
+
+</odoo>
