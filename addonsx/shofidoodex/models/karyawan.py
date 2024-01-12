@@ -14,13 +14,12 @@ class DoodexKaryawan(models.Model):
     gaji = fields.Integer(string='Gaji per bulan') 
     foto = fields.Binary(string='Foto')
 
-    # kode = fields.Char(string='Kode')
+    
+    
+class DoodexKaryawanBaru(models.Model):
+    _inherit = 'doodex.karyawan'
+    is_baru = fields.Boolean(string='Baru', default=False)
+        
+    
 
-    # @api.onchange('name')
-    # def _onchange_kode(self):
-    #     if self.name == 'accounting':
-    #         self.kode = 'acc'
-    #     elif self.name == 'kasir':
-    #         self.kode = 'ks'
-    #     elif self.name == 'makanankering':
-    #         self.kode = 'mk'
+    # kode = fields.Char(string='Kode')

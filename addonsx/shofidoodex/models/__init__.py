@@ -9,4 +9,7 @@ from . import karyawan
 from . import penjualan
 from . import supplier
 from . import pembelian
+from . import komisaris
+from . import purchasing
+from . import promosi
 # from . import detailpenjualan

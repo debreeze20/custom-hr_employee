@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name"/>
+                <field name="alamat" />
                 <field name="telp"/>
                 <field name="cp"/>
             </tree>
@@ -21,6 +22,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="alamat" />
                         <field name="telp"/>
                         <field name="cp"/>
                     </group>

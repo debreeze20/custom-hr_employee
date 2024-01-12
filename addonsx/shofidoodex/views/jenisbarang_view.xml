@@ -26,10 +26,10 @@
                 <sheet>
                     <group>
                         <!-- Add your fields here -->
-                    <field name="name"/>
-                    <field name="letak"/>
-                    <field name="kode"/>
-                    <field name="daftarbarang"/>
+                        <field name="name"/>
+                        <field name="letak"/>
+                        <field name="kode"/>
+                        <field name="daftarbarang"/>
                     
                     </group>
                 </sheet>

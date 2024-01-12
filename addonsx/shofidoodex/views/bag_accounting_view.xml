@@ -59,7 +59,7 @@
     </record>
 
     <menuitem id="shofidoodex_karyawan_accounting_menu_act" 
-        name="Bagian Accounting " 
+        name="Bagian Accounting" 
         parent="shofidoodex_pegawai_menu_categ" 
         action="doodex_karyawan_accounting_action" 
         sequence="15"/>

@@ -11,6 +11,9 @@
                 <field name="gender"/>
                 <field name="alamat"/>
                 <!-- <field name="id_member"/> -->
+                <field name="tgl_daftar" />
+                <field name="total_belanja" />
+                <field name="poin" />
                 <field name="level"/>
             </tree>
         </field>
@@ -24,22 +27,33 @@
         <field name="model">doodex.pelanggan</field>
         <field name="arch" type="xml">
             <form string="FORM PELANGGAN">
-                <sheet>
-                <div class="oe_title">
-                    <h1>
-                        <field name="referensi_pelanggan" readonly="1"/>
-                    </h1>
-                </div>
-                    <group>
-                        <!-- Add your fields here -->
-                        <field name="name"/>
-                        <field name="gender"/>
-                        <field name="alamat"/>
-                        <!-- <field name="id_member"/> -->
-                        <!-- <field name="referensi"/> -->
-                        <field name="level"/>
-                    </group>
-                </sheet>
+                <header> 
+                    <button name="action_gold" type="object" string="gold" states="silver"  class="btn btn-success"/>
+                    <button name="action_platinum" type="object" string="platinum" states="golf" class="btn btn-primary"/>
+                    <field name="level" widget="statusbar" statusbar_visible="silver, gold, platinum"/>
+                </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="referensi_pelanggan" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="alamat"/>
+                            <!-- <field name="id_member"/> -->
+                            <!-- <field name="referensi"/> -->
+                            <field name="tgl_daftar" />
+                            <field name="total_belanja" />
+                            <field name="poin" />
+                            <field name="level"/>
+                        </group>
+                    </sheet>
+                    <sheet> 
+                        <field name="penjualan_ids" />
+                    </sheet>
             </form>
         </field>
     </record>

@@ -20,13 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','product'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'data/referensi_penjualan.xml',
         'data/referensi_member.xml',
+        'data/referensi_pembelian.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/menu.xml',
@@ -41,6 +42,9 @@
         'views/penjualan_view.xml',
         'views/supplier_view.xml',
         'views/pembelian_view.xml',
+        'views/komisaris_view.xml',
+        'views/purchasing_view.xml',
+        'views/promosi_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

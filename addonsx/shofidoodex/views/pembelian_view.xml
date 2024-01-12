@@ -6,8 +6,10 @@
         <field name="model">doodex.pembelian</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="name"/>
+                <field name="referensi_pembelian"/>
+                
                 <field name="barang_id"/>
+                <field name="modal" />
                 <field name="supplier_id"/>
                 <field name="qty_beli"/>
                 <field name="bayar"/>
@@ -21,9 +23,15 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+                <div class="oe_title">
+                    <h1>
+                        <field name="referensi_pembelian" readonly="1"/>
+                    </h1>
+                </div>
                     <group>
-                        <field name="name"/>
+            
                         <field name="barang_id"/>
+                        <field name="modal" />
                         <field name="supplier_id"/>
                         <field name="qty_beli"/>
                         <field name="bayar"/>                        

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit tree view -->
+    <record id="shofidoodex_purchasing_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->   
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="is_purchasing" />
+            </xpath>         
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="shofidoodex_purchasing_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="is_purchasing" />
+            </xpath>
+            <xpath expr="//form/sheet/group[1]" position="inside">
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_doodex_purchasing_action" model="ir.actions.act_window">
+        <field name="name">Purchasing</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="domain">[('is_purchasing','=',True)]</field>   -->
+    </record>
+
+    <menuitem
+        id="shofidoodex_purchasing_menu_act"
+        name="Purchasing"
+        action="res_partner_doodex_purchasing_action"
+        parent="shofidoodex_pegawai_menu_categ"
+        sequence="15"/>
+
+</odoo>
