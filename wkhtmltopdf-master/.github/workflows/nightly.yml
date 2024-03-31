@@ -1,0 +1,57 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  check_date:
+    runs-on: ubuntu-latest
+    name: Check latest commit
+    outputs:
+      should_run: ${{ steps.should_run.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: print latest_commit
+        run: echo ${{ github.sha }}
+
+      - id: should_run
+        continue-on-error: true
+        name: check latest commit is less than a day
+        if: ${{ github.event_name == 'schedule' }}
+        run: test -z $(git rev-list  --after="24 hours"  ${{ github.sha }}) && echo "::set-output name=should_run::false"
+
+  linux:
+    needs: check_date
+    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+    name: Build Debian Bookworm
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure docker
+        run:  |
+          echo '{ "experimental": true }' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+
+      - name: Package for Debian Bookworm
+        run: |
+          ./packaging/build package-docker bookworm-amd64 .. --nightly
+
+      - name: Package for Ubuntu Jammy
+        run: |
+          ./packaging/build package-docker jammy-amd64 .. --nightly
+
+      - name: Upload Packages to GitHub
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: targets/**/*.deb
+          tag: "nightly"
+          file_glob: true
+          overwrite: true
+          promote: true

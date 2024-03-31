@@ -1,0 +1,12 @@
+*using this in ubuntu 20.00 desktop
+
+replace this path in "run" file based on path modul location:
+"--addons-path=/home/desi/odoo-16.0/addons,/home/desi/odoo-16.0/addonsx"
+
+login to localhost:8060
+uname = admin
+pw = admin
+
+in terminal:
+source ./shofi/bin/active
+./run

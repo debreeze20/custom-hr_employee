@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <!-- Inheriting hr.employee form view -->
+        <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Adding new tab for Other Information -->
+                <notebook position="inside">
+                    <page name="other_information" string="Other Information">
+                        <group>
+                            <group name="kepegawaian" string="Kepegawaian">
+                                <field name="kesehatan"/>
+                                <field name="ketenagakerjaan"/>
+                            </group>
+                                               
+                            <group name="medical" string="Medical">
+                                <field name="goldar"/>
+                                <field name="rhesus"/>
+                                <field name="medical"/>
+                            </group>
+                            
+                        </group>
+                    </page>
+                </notebook>
+                
+            </field>
+        </record>
+    </data>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_pegawai_action" model="ir.actions.act_window">
+        <field name="name">Pegawai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+    
+</odoo>
